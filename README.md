@@ -51,9 +51,9 @@ which dcm2niix will translate to BIDS (though note that the `DR` flags will appe
 
 ## GE
 
-These images demonstrate `HyperSense` Compressed Sensing (CS) as well as [AIR Recon DL](https://arxiv.org/pdf/2008.06559.pdf) Deep Learning. These images simulate a GE 3T Architect running MR30.1 and were provided by Jaemin Shin (GE Medical), [see here for more details](https://github.com/mr-jaemin/ge-mri/tree/main/data).
+These images demonstrate `HyperSense` Compressed Sensing (CS) as well as [AIR Recon DL](https://arxiv.org/pdf/2008.06559.pdf) Deep Learning reconstruction. These images simulate a GE 3T MR750 running MR30.1 and were provided by Jaemin Shin (GE HealthCare), [see here for more details](https://github.com/mr-jaemin/ge-mri/tree/main/data).
 
-HyperSENSE (HS) must be used with 3D acquisitions (either gradient echo and spin echo) and [ARC (GRAPPA)](https://mriquestions.com/grappaarc.html) acceleration. It is not compatible with [ASSET (SENSE)](https://mriquestions.com/senseasset.html). ARC can be 1x1 but it’s still required. The acceleration factor is for only the randomly sampled k-space locations. This factor doesn’t account for any ARC acceleration across ky-kz, partial fourier across ky-kz, or elliptical corner cutting typically used in HyperSENSE. Because HyperSense samples a radial (rather than square) k-space an agressive HS factor of 1.5 will reduce acquisition time by more than 2 times (100%*.7/1.5=47%). Note that HS is both in-plane and between-plane. Therefore, HS is not a good match for the existing BIDS [ParallelReductionFactorInPlane](https://bids-specification.readthedocs.io/en/stable/glossary.html#objects.metadata.ParallelReductionFactorInPlane) tag.
+HyperSense (HS) must be used with 3D acquisitions (either gradient echo and spin echo) and [ARC (GRAPPA)](https://mriquestions.com/grappaarc.html) acceleration. It is not compatible with [ASSET (SENSE)](https://mriquestions.com/senseasset.html). ARC can be 1x1 but it’s still required. The acceleration factor is for only the randomly sampled k-space locations. This factor doesn’t account for any ARC acceleration across ky-kz, partial fourier across ky-kz, or elliptical corner cutting typically used in HyperSENSE. Because HyperSense samples a radial (rather than square) k-space an agressive HS factor of 1.5 will reduce acquisition time by more than 2 times (100%*.7/1.5=47%). Note that HS is both in-plane and through-plane. Therefore, HS is not a good match for the existing BIDS [ParallelReductionFactorInPlane](https://bids-specification.readthedocs.io/en/stable/glossary.html#objects.metadata.ParallelReductionFactorInPlane) tag.
 
  - `GE_10_MPRAGE_P2S1H1.24`: CSx1.24
  - `GE_13_Ax_T2_FLAIR_FS_DL_High`: DL high (0.75)
@@ -70,9 +70,8 @@ which dcm2niix will translate to the BIDS field:
 ```
 "CompressedSensingFactor": 1.24,
 ```
-https://github.com/mr-jaemin/ge-mri/blob/main/DICOM/README.md
 
-[AIR Recon DL will be reported in a DICOM private tag (0043,10CA)](https://github.com/mr-jaemin/ge-mri/blob/main/DICOM/README.md). DL has three levels (low 0.3, medium 0.5 and high 0.75) and is only available for 2D acquisitions. For example, a DL of High will yield:
+[AIR Recon DL will be reported in a DICOM private tag (0043,10CA)](https://github.com/mr-jaemin/ge-mri/blob/main/DICOM/README.md). DL has three levels (low 0.3, medium 0.5 and high 0.75) and is available for both 2D and 3D acquisitions. For example, a DL of High will yield:
 
 ```
 (0043,10ca) LO [0.75\High]
