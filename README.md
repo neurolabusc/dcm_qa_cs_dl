@@ -6,7 +6,7 @@
 
 These images demonstrate Compressed Sensing (CS) and the Deep Learning based [Deep Resolve Gain (DRG), Sharp (DRS) and Boost (DRB)](https://marketing.webassets.siemens-healthineers.com/43ac1c8627df5a23/9121a0dc7e9e/siemens-healthineers-mr-deep-resolve-family-infographic.pdf) filters. The images were acquired using a Siemens 1.5T Sola running XA51 and were provided by Paul S Morgan (University of Nottingham).
 
-For Siemens, CS is currently only available for 3D gradient echo acquisitions. It is listed on the console as a iPAT (integrated Parallel Acquisition Techniques) method. So the iPAT options `CS`, `GRAPPA` or `mSENSE` are mutually exclusive.
+For Siemens, CS is currently only available for 3D turbo spin echo acquisitions. It is listed on the console as a iPAT (integrated Parallel Acquisition Techniques) method. So the iPAT options `CS`, `GRAPPA` or `mSENSE` are mutually exclusive.
 
 Each series is saved as both enhanced and classic DICOM format.
 
