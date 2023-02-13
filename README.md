@@ -6,7 +6,7 @@
 
 These images demonstrate Compressed Sensing (CS) and the Deep Learning based [Deep Resolve Gain (DRG), Sharp (DRS) and Boost (DRB)](https://marketing.webassets.siemens-healthineers.com/43ac1c8627df5a23/9121a0dc7e9e/siemens-healthineers-mr-deep-resolve-family-infographic.pdf) filters. The images were acquired using a Siemens 1.5T Sola running XA51 and were provided by Paul S Morgan (University of Nottingham).
 
-For Siemens, CS is listed on the console as a iPAT (integrated Parallel Acquisition Techniques) method. So the iPAT options `CS`, `GRAPPA` or `mSENSE` are mutually exclusive.
+For Siemens, CS is currently only available for 3D gradient echo acquisitions. It is listed on the console as a iPAT (integrated Parallel Acquisition Techniques) method. So the iPAT options `CS`, `GRAPPA` or `mSENSE` are mutually exclusive.
 
 Each series is saved as both enhanced and classic DICOM format.
 
@@ -53,7 +53,7 @@ which dcm2niix will translate to BIDS (though note that the `DR` flags will appe
 
 These images demonstrate `HyperSense` Compressed Sensing (CS) as well as [AIR Recon DL](https://arxiv.org/pdf/2008.06559.pdf) Deep Learning. These images simulate a GE 3T Architect running MR30.1 and were provided by Jaemin Shin (GE Medical), [see here for more details](https://github.com/mr-jaemin/ge-mri/tree/main/data).
 
-HyperSENSE (HS) must be used with [ARC (GRAPPA)](https://mriquestions.com/grappaarc.html) acceleration, but is not compatible with [ASSET (SENSE)](https://mriquestions.com/senseasset.html). ARC can be 1x1 but it’s still required. The acceleration factor is for only the randomly sampled k-space locations. This factor doesn’t account for any ARC acceleration across ky-kz, partial fourier across ky-kz, or elliptical corner cutting typically used in HyperSENSE. Because HyperSense samples a radial (rather than square) k-space an agressive HS factor of 1.5 will reduce acquisition time by more than 2 times (100%*.7/1.5=47%). Note that HS is both in-plane and between-plane. Therefore, HS is not a good match for the existing BIDS [ParallelReductionFactorInPlane](https://bids-specification.readthedocs.io/en/stable/glossary.html#objects.metadata.ParallelReductionFactorInPlane) tag.
+HyperSENSE (HS) must be used with 3D acquisitions (either gradient echo and spin echo) and [ARC (GRAPPA)](https://mriquestions.com/grappaarc.html) acceleration. It is not compatible with [ASSET (SENSE)](https://mriquestions.com/senseasset.html). ARC can be 1x1 but it’s still required. The acceleration factor is for only the randomly sampled k-space locations. This factor doesn’t account for any ARC acceleration across ky-kz, partial fourier across ky-kz, or elliptical corner cutting typically used in HyperSENSE. Because HyperSense samples a radial (rather than square) k-space an agressive HS factor of 1.5 will reduce acquisition time by more than 2 times (100%*.7/1.5=47%). Note that HS is both in-plane and between-plane. Therefore, HS is not a good match for the existing BIDS [ParallelReductionFactorInPlane](https://bids-specification.readthedocs.io/en/stable/glossary.html#objects.metadata.ParallelReductionFactorInPlane) tag.
 
  - `GE_10_MPRAGE_P2S1H1.24`: CSx1.24
  - `GE_13_Ax_T2_FLAIR_FS_DL_High`: DL high (0.75)
