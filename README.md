@@ -32,7 +32,7 @@ which dcm2niix will translate to the BIDS field:
 "CompressedSensingFactor": 4,
 ```
 
-There are several forms of deep learning, using the `Deep Resolve` branding. I have seen three of these reported by XA51 in private tag (0021,1175): Deep Resolve Gain (DRG), Deep Resolve Boost (DRB), Deep Resolve Sharp (DRS). I have yet to see examples of `Deep Resolve Swift Brain`, so dcm2niix will not detect this.
+There are several forms of deep learning, using the `Deep Resolve` branding. Deep Resolve is only available for 2D acquisitions. I have seen three of these reported by XA51 in private tag (0021,1175): Deep Resolve Gain (DRG), Deep Resolve Boost (DRB), Deep Resolve Sharp (DRS). I have yet to see examples of `Deep Resolve Swift Brain`, so dcm2niix will not detect this.
 
 For example, an image with Gain of 4 and Sharp of 2 will report:
 
@@ -72,7 +72,7 @@ which dcm2niix will translate to the BIDS field:
 ```
 https://github.com/mr-jaemin/ge-mri/blob/main/DICOM/README.md
 
-[AIR Recon DL will be reported in a DICOM private tag (0043,10CA)](https://github.com/mr-jaemin/ge-mri/blob/main/DICOM/README.md). For example, a DL of High will yield:
+[AIR Recon DL will be reported in a DICOM private tag (0043,10CA)](https://github.com/mr-jaemin/ge-mri/blob/main/DICOM/README.md). DL has three levels (low 0.3, medium 0.5 and high 0.75) and is only available for 2D acquisitions. For example, a DL of High will yield:
 
 ```
 (0043,10ca) LO [0.75\High]
