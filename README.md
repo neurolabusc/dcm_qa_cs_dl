@@ -59,7 +59,7 @@ HyperSense (HS) must be used with 3D acquisitions (either gradient echo and spin
  - `GE_13_Ax_T2_FLAIR_FS_DL_High`: DL high (0.75)
  - `GE_14_Ax_T2_FLAIR_FS_DL_Off`: DL off
 
-[HyperSense will be reported in a DICOM private tag (0043,10b7)](https://github.com/mr-jaemin/ge-mri/tree/main/data). For example, a HS of 1.24 will yield:
+[HyperSense will be reported in a DICOM private tag (0043,10b7)](https://github.com/mr-jaemin/ge-mri/tree/main/DICOM#acceleration). For example, a HS of 1.24 will yield:
 
 ```
 (0043,10b7) LO [1.24\1\10\0]
@@ -71,7 +71,7 @@ which dcm2niix will translate to the BIDS field:
 "CompressedSensingFactor": 1.24,
 ```
 
-[AIR Recon DL will be reported in a DICOM private tag (0043,10CA)](https://github.com/mr-jaemin/ge-mri/blob/main/DICOM/README.md). DL has three levels (low 0.3, medium 0.5 and high 0.75) and is available for both 2D and 3D acquisitions. For example, a DL of High will yield:
+[AIR Recon DL will be reported in a DICOM private tag (0043,10CA)](https://github.com/mr-jaemin/ge-mri/tree/main/DICOM#air-recon-dl). DL has three levels (low 0.3, medium 0.5 and high 0.75) and is available for both 2D and 3D acquisitions. For example, a DL of High will yield:
 
 ```
 (0043,10ca) LO [0.75\High]
