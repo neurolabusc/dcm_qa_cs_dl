@@ -83,6 +83,29 @@ which dcm2niix will translate to the BIDS field:
 "DeepLearningDetails": "0.75\\High",
 ```
 
+## Philips
+
+These images demonstrate `Compressed SENSE` Compressed Sensing (CS). Usage is mutually exclusive of the traditional `SENSE` acceleration. The acceleration factors for CSENSE and SENSE are similar (in the provided series 4, the scan would require 67 seconds without acceleration, and 34 seconds with either SENSE or CSENSE of x2) The images were acquired using a Philips 3.0T Ingenia Elition X running software 5.7.1 and were provided by Paul S Morgan (University of Nottingham).
+
+ - `Ph_401_T1W_FFE_Sno_CS2`: CSx2 (Enhanced DICOM)
+ - `Ph_501_T1W_FFE_Sno_CS4`: CSx4 (Classic DICOM)
+
+Philips reports compressed SENSE using public tags. It can be detected by the ParallelAcquisitionTechnique (0018,9078) tag reported `CSENSE`. Therefore, CS of 4 will yield:
+
+```
+(0018,9155) FD 1        # ParallelReductionFactorOutOfPlane
+(0018,9168) FD 1        # ParallelReductionFactorSecondInPlane
+(0018,9069) FD 4        # ParallelReductionFactorInPlane
+(0018,9078) CS [CSENSE] # ParallelAcquisitionTechnique
+```
+
+Since the same tags are used as traditional acceleration dcm2niix will populate the existing BIDS fields:
+
+```
+"ParallelReductionFactorInPlane": 4,
+"ParallelAcquisitionTechnique": "CSENSE",
+```
+
 ## Running
 
 Assuming that the executable dcm2niix is in your path, you should be able to simply run the script `batch.sh` from the terminal.
