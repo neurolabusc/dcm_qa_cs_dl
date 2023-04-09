@@ -1,7 +1,7 @@
 {
 	"Modality": "MR",
 	"MagneticFieldStrength": 1.5,
-	"ImagingFrequency": 63.6715,
+	"ImagingFrequency": 63.671496,
 	"Manufacturer": "Siemens",
 	"ManufacturersModelName": "MAGNETOM Sola",
 	"InstitutionName": "Nottingham University Hospital",
@@ -67,5 +67,5 @@
 		-1	],
 	"InPlanePhaseEncodingDirectionDICOM": "ROW",
 	"ConversionSoftware": "dcm2niix",
-	"ConversionSoftwareVersion": "v1.0.20230210"
+	"ConversionSoftwareVersion": "v1.0.20230404"
 }

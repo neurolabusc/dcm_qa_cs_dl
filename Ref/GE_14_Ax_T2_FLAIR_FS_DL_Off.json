@@ -1,7 +1,7 @@
 {
 	"Modality": "MR",
 	"MagneticFieldStrength": 3,
-	"ImagingFrequency": 127.623,
+	"ImagingFrequency": 127.622768,
 	"Manufacturer": "GE",
 	"ManufacturersModelName": "Discovery MR750",
 	"InstitutionName": "GEHC",
@@ -50,5 +50,5 @@
 		-0.07752	],
 	"InPlanePhaseEncodingDirectionDICOM": "ROW",
 	"ConversionSoftware": "dcm2niix",
-	"ConversionSoftwareVersion": "v1.0.20230210"
+	"ConversionSoftwareVersion": "v1.0.20230404"
 }

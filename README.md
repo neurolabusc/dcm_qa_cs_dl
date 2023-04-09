@@ -85,7 +85,18 @@ which dcm2niix will translate to the BIDS field:
 
 ## Philips
 
-These images demonstrate `Compressed SENSE` Compressed Sensing (CS). Usage is mutually exclusive of the traditional `SENSE` acceleration. The acceleration factors for CSENSE and SENSE are similar (in the provided series 4, the scan would require 67 seconds without acceleration, and 34 seconds with either SENSE or CSENSE of x2) The images were acquired using a Philips 3.0T Ingenia Elition X running software 5.7.1 and were provided by Paul S Morgan (University of Nottingham).
+Philips supports `SmartSpeed` artificial intelligence (AI) acceleration. The images were acquired using a Philips 3.0T Ingenia Elition X running software 11.0.0 and were provided by Paul S Morgan (University of Nottingham).
+
+ - `201_T1W_TSE_Sno_CSno_CSAIno`: AI off (Enhanced DICOM)
+ - `501_T1W_TSE_Sno_CSno_CSAI2`: AI level 2 (Enhanced DICOM)
+
+The presence of AI can be detected by looking for the flag `AI` in the private tag 2005,1110. However, the DICOM image does not appear to store the AI level.
+
+```
+(2005,1110) CS [CS_SENSE_AI ]
+```
+
+Philips brands Compressed Sensing as `Compressed SENSE`. Usage is mutually exclusive of the traditional `SENSE` acceleration. The acceleration factors for CSENSE and SENSE are similar (in the provided series 4, the scan would require 67 seconds without acceleration, and 34 seconds with either SENSE or CSENSE of x2). The images were acquired using a Philips 3.0T Ingenia Elition X running software 5.7.1 and were provided by Paul S Morgan (University of Nottingham).
 
  - `Ph_401_T1W_FFE_Sno_CS2`: CSx2 (Enhanced DICOM)
  - `Ph_501_T1W_FFE_Sno_CS4`: CSx4 (Classic DICOM)

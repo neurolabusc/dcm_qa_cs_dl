@@ -1,7 +1,7 @@
 {
 	"Modality": "MR",
 	"MagneticFieldStrength": 3,
-	"ImagingFrequency": 127.775,
+	"ImagingFrequency": 127.775376,
 	"Manufacturer": "Philips",
 	"ManufacturersModelName": "Ingenia Elition X",
 	"InstitutionName": "Queens Medical Centre",
@@ -42,8 +42,7 @@
 	"PhaseEncodingStepsOutOfPlane": 1,
 	"AcquisitionMatrixPE": 256,
 	"ReconMatrixPE": 256,
-	"ParallelReductionFactorInPlane": 4,
-	"ParallelAcquisitionTechnique": "CSENSE",
+	"CompressedSensingFactor": 4,
 	"WaterFatShift": 2.00188,
 	"EstimatedEffectiveEchoSpacing": 9.03529e-06,
 	"EstimatedTotalReadoutTime": 0.002304,
@@ -59,5 +58,5 @@
 		0	],
 	"InPlanePhaseEncodingDirectionDICOM": "ROW",
 	"ConversionSoftware": "dcm2niix",
-	"ConversionSoftwareVersion": "v1.0.20230210"
+	"ConversionSoftwareVersion": "v1.0.20230404"
 }

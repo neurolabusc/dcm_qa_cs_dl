@@ -1,7 +1,7 @@
 {
 	"Modality": "MR",
 	"MagneticFieldStrength": 3,
-	"ImagingFrequency": 127.623,
+	"ImagingFrequency": 127.622786,
 	"Manufacturer": "GE",
 	"ManufacturersModelName": "SIGNA Architect",
 	"InstitutionName": "GEHC",
@@ -49,5 +49,5 @@
 		-0.22348	],
 	"InPlanePhaseEncodingDirectionDICOM": "ROW",
 	"ConversionSoftware": "dcm2niix",
-	"ConversionSoftwareVersion": "v1.0.20230210"
+	"ConversionSoftwareVersion": "v1.0.20230404"
 }
